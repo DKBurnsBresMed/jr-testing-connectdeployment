@@ -23,13 +23,14 @@ ui <- fluidPage(
             sliderInput("bins",
                         "Number of bins:",
                         min = 1,
-                        max = 50,
+                        max = 500,
                         value = 30)
         ),
 
         # Show a plot of the generated distribution
         mainPanel(
-           plotOutput("distPlot")
+           plotOutput("distPlot"),
+           h2(paste0("MY SECRET PASSWORD IS: ",Sys.getenv()["DATABASE_PASSWORD"]))
         )
     )
 )
